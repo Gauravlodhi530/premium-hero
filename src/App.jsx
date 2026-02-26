@@ -102,7 +102,7 @@ export default function App() {
       );
       
       glitchTimeoutRef.current = setTimeout(() => setSecondLine(randomSecond), 120);
-    }, 3000);
+    });
     
     // Cursor blink animation
     const cursorAnimation = gsap.to(cursorRef.current, {
@@ -121,6 +121,14 @@ export default function App() {
       }
       cursorAnimation.kill();
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.href = "https://whereuelevate.com/drills/hack-gear-2.0";
+    }, 7000); // 7 seconds
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -353,7 +361,7 @@ export default function App() {
               transition={{ delay: 0.8 }}
             >
               <motion.a 
-                href="#" 
+                href="https://whereuelevate.com/drills/hack-gear-2.0" 
                 className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-red-600 bg-black text-red-500 font-bold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:bg-red-600 hover:text-black hover:shadow-[0_0_30px_rgba(255,0,0,0.6)] w-full sm:min-w-[240px] max-w-[320px] text-center uppercase tracking-wider"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -362,7 +370,7 @@ export default function App() {
               </motion.a>
 
               <motion.a 
-                href="#" 
+                href="https://unstop.com/hackathons/hack-gear-20-nova-coders-1612261" 
                 className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-500 bg-black text-cyan-400 font-bold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] w-full sm:min-w-[240px] max-w-[320px] text-center uppercase tracking-wider"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
